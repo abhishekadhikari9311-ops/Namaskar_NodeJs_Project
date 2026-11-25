@@ -2,10 +2,11 @@ const express= require("express")
 const app=express()
 const port=4000
 
+app.set("view engine","ejs")
+
 app.get("/",(req,res)=>{
-    res.status(400).json({
-        message:"Hello World bye  !"
-    })
+    const name="abhi ram";const age=26
+    res.status(400).render("home",{name,age})
 })
 
 app.listen(port,()=>{
